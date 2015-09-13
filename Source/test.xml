@@ -1,0 +1,41 @@
+<gel:script
+ xmlns:core="jelly:core"
+    xmlns:gel="jelly:com.niku.union.gel.GELTagLibrary"
+    xmlns:soap="jelly:com.niku.union.gel.SOAPTagLibrary"
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:sql="jelly:sql"
+    xmlns:xog="http://www.niku.com/xog"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:file="jelly:com.niku.union.gel.FileTagLibrary"
+    xmlns:util="jelly:util"
+    xmlns:q="http://www.niku.com/xog/Query">
+
+    <gel:setDataSource dbId="Niku"/>
+
+    <sql:query escapeText="false" var="vVars">
+      select BV.CODE, BV.MOST_LIKELY
+      from odf_ca_benf_variable BV
+        inner join odf_MULTI_VALUED_LOOKUPS MVL
+        ON MVL.attribute='variables' and MVL.object='benf_calc' and MVL.PK_ID = 5000001
+        AND BV.ID = MVL.VALUE
+    </sql:query>
+    <core:forEach items="${vVars.rowsByIndex}" var="row">
+      <core:set var="vVarname">${row[0]}</core:set>
+      <core:set var="${vVarname}" value="${row[1]}"/>
+    </core:forEach>
+    <gel:log level="debug" message="5000001: ${V009}-${V010}-${V011}"/>
+
+    <sql:query escapeText="false" var="vBCalc">
+      select BC.formula FORMULA
+      from odf_ca_benf_calc BC
+      Where BC.ID = 5000001
+    </sql:query>
+    <core:forEach items="${vBCalc.rowsByIndex}" var="row">
+      <core:set var="vFormula">${row[0]}</core:set>
+      <core:set var="vResultado">${vFormula}</core:set>
+      <gel:log level="debug" message="5000001: ${vFormula}-${vResultado}"/>
+    </core:forEach>
+
+</gel:script>
