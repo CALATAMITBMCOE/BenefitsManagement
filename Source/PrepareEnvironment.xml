@@ -14,13 +14,10 @@
 
   <!--============================================================-->
 	<!-- Package: Benefits Management 1.0 							-->
-	<!-- Process: Investment Benefit Variables Load 						-->
+	<!-- Process: Benefit Plan Generate and Update 						-->
 	<!-- Step	: Start												-->
 	<!-- Action	: Prepare Environment								-->
 	<!--															-->
-	<!-- Process: Strategy Control									-->
-	<!-- Step	: Close Evaluation									-->
-	<!-- Action	: Prepare Environment								-->
    	<!--============================================================-->
 	<!-- Create environment variables and Login to XOG 				-->
    	<!--============================================================-->

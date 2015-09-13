@@ -1,9 +1,9 @@
-<gel:script 
- xmlns:core="jelly:core" 
+<gel:script
+ xmlns:core="jelly:core"
     xmlns:gel="jelly:com.niku.union.gel.GELTagLibrary"
     xmlns:soap="jelly:com.niku.union.gel.SOAPTagLibrary"
     xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-    xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"	    
+    xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"
     xmlns:sql="jelly:sql"
     xmlns:xog="http://www.niku.com/xog"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -11,7 +11,7 @@
     xmlns:file="jelly:com.niku.union.gel.FileTagLibrary"
     xmlns:util="jelly:util"
     xmlns:q="http://www.niku.com/xog/Query">
-	
+
    	<!--============================================================-->
 	<!-- Package: Strategic Alignment 4.0 							-->
 	<!-- Process: Strategic Item Status Initialize					-->
@@ -22,23 +22,23 @@
    	<!--============================================================-->
 	<!-- Initialize the Item Status Scale object with empty records -->
    	<!--============================================================-->
-	
+
 	<core:set var="vKPIID" value="${gel_objectInstanceId}"/>
 	<core:if test="${DebugLevel &gt; 0}">
 		<gel:log level="debug" message="Start Script"/>
-		<gel:log level="debug" message=">>Item Status ID      : ${vKPIID}"/> 
-		<gel:log level="debug" message=">>Persisted XOG URL   : ${XOGURL}"/> 
-		<gel:log level="debug" message=">>Persisted LOG Folder: ${XOGlogFolder}"/> 
-		<gel:log level="debug" message=">>Persisted WEB Folder: ${XOGwebFolder}"/> 
-		<gel:log level="debug" message=">>Persisted SessionID : ${sessionID}"/> 
-		<gel:log level="debug" message=">>Persisted DebugLevel: ${DebugLevel}"/> 
+		<gel:log level="debug" message=">>Item Status ID      : ${vKPIID}"/>
+		<gel:log level="debug" message=">>Persisted XOG URL   : ${XOGURL}"/>
+		<gel:log level="debug" message=">>Persisted LOG Folder: ${XOGlogFolder}"/>
+		<gel:log level="debug" message=">>Persisted WEB Folder: ${XOGwebFolder}"/>
+		<gel:log level="debug" message=">>Persisted SessionID : ${sessionID}"/>
+		<gel:log level="debug" message=">>Persisted DebugLevel: ${DebugLevel}"/>
 	</core:if>
 
 
 	<gel:setDataSource dbId="Niku"/>
 
 	<sql:query escapeText="false" var="vKPI">
- 		select SK.CODE, SK.NAME, U.USER_NAME, U.ID 
+ 		select SK.CODE, SK.NAME, U.USER_NAME, U.ID
 		from odf_ca_strat_kpi SK inner join cmn_sec_users U on u.ID = SK.CREATED_BY
 		Where SK.id = ${vKPIID}
 		and not exists (select 'x' from odf_ca_strat_item_scale where odf_parent_id = SK.id)
@@ -49,9 +49,9 @@
 		<core:set var="vUserName">${row[2]}</core:set>
 		<core:set var="vUserID">${row[3]}</core:set>
 		<core:if test="${DebugLevel &gt; 1}">
-			<gel:log level="debug" message="Found KPI: ${vKPIID}-${vKPICODE}-${vKPINAME} UserName=${vUserName}-${vUserID}"/> 
+			<gel:log level="debug" message="Found KPI: ${vKPIID}-${vKPICODE}-${vKPINAME} UserName=${vUserName}-${vUserID}"/>
 		</core:if>
-	
+
 		<gel:parse var="v_xml_root">
 			<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
 				<Header action="write" externalSource="NIKU"
@@ -64,8 +64,8 @@
 		<core:set var="vScale" value="1"/>
 		<core:set var="vLow" value="0"/>
 		<core:set var="vHigh" value="0.6"/>
-		<core:while test="${vScale &lt; 7}"> 
-			
+		<core:while test="${vScale &lt; 7}">
+
 			<gel:parse var="v_xml_instance">
 				<instance instanceCode="${vKPICODE}-${vScale}" objectCode="strat_item_scale"
 					parentInstanceCode="${vKPICODE}" parentObjectCode="strat_kpi">
@@ -108,14 +108,14 @@
 					<gel:log level="debug" message="Error Defining Item Status Scale for ${vScale}; ${vLow}; ${vHigh}."/>
 				</core:otherwise>
 			</core:choose>
-		
+
 		</core:while>
-		
+
 		<core:if test="${DebugLevel &gt; 1}">
 			<gel:serialize var="${v_xml_root}" fileName="${XOGwebFolder}/XOGWrite_KPIItemStatus_${vKPIID}.xml"/>
-			<gel:log level="debug" message="XOG Write can be found at: ${XOGURL}/niku/XOGWrite_KPIItemStatus_${vKPIID}.xml"/> 
+			<gel:log level="debug" message="XOG Write can be found at: ${XOGURL}/niku/XOGWrite_KPIItemStatus_${vKPIID}.xml"/>
 		</core:if>
-		
+
 		<!-- Calling XOG-->
 		<core:catch var="v_xog_exception">
 			<soap:invoke endpoint="${XOGURL}/niku/xog" var="runresult">
@@ -135,9 +135,9 @@
 		</core:catch>
 		<core:if test="${DebugLevel &gt; 1}">
 			<gel:serialize var="${runresult}" fileName="${XOGwebFolder}/XOGResult_KPIItemStatus_${vKPIID}.xml"/>
-			<gel:log level="debug" message="XOG Results can be found at: ${XOGURL}/niku/XOGResult_KPIItemStatus_${vKPIID}.xml"/> 
+			<gel:log level="debug" message="XOG Results can be found at: ${XOGURL}/niku/XOGResult_KPIItemStatus_${vKPIID}.xml"/>
 		</core:if>
-		
+
 	</core:forEach>
 
 </gel:script>
