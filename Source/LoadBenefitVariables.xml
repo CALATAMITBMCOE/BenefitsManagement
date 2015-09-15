@@ -1,0 +1,122 @@
+<gel:script
+ xmlns:core="jelly:core"
+    xmlns:gel="jelly:com.niku.union.gel.GELTagLibrary"
+    xmlns:soap="jelly:com.niku.union.gel.SOAPTagLibrary"
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:sql="jelly:sql"
+    xmlns:xog="http://www.niku.com/xog"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:file="jelly:com.niku.union.gel.FileTagLibrary"
+    xmlns:util="jelly:util"
+    xmlns:q="http://www.niku.com/xog/Query"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+    <core:set var="vBenefitPlanIntl" value="${gel_objectInstanceId}"/>
+    <core:if test="${DebugLevel &gt; 0}">
+      <gel:log level="debug" message="Start Script"/>
+      <gel:log level="debug" message=">>Benefit Plan ID     : ${vBenefitPlanIntl}"/>
+      <gel:log level="debug" message=">>Persisted XOG URL   : ${XOGURL}"/>
+      <gel:log level="debug" message=">>Persisted LOG Folder: ${XOGlogFolder}"/>
+      <gel:log level="debug" message=">>Persisted WEB Folder: ${XOGwebFolder}"/>
+      <gel:log level="debug" message=">>Persisted SessionID : ${sessionID}"/>
+      <gel:log level="debug" message=">>Persisted DebugLevel: ${DebugLevel}"/>
+    </core:if>
+
+    <gel:setDataSource dbId="Niku"/>
+
+    <sql:query escapeText="false" var="vBPlan">
+      select FP.name, FP.code, FinP.PERIOD_NAME, SP.PERIOD_NAME, SP.PERIOD_TYPE, fp.object_code, i.code, BP.BENF_GROUP, BP.BENF_PLAN_PROFILE, BP.PARTITION_CODE
+      FROM FIN_PLANS FP 
+		inner join ODF_CA_BENEFITPLAN BP on BP.ID = FP.ID
+		inner join inv_investments I on I.ID = FP.OBJECT_ID and I.odf_object_code = FP.object_code
+		inner join BIZ_COM_PERIODS SP on SP.ID = FP.start_period_id
+		inner join BIZ_COM_PERIODS FinP on FinP.ID = FP.end_period_id
+      WHERE FP.ID = ${vBenefitPlanIntl}
+    </sql:query>
+    <core:forEach items="${vBPlan.rowsByIndex}" var="row">
+		<core:set var="vPlanName">${row[0]}</core:set>
+		<core:set var="vPlanCode">${row[1]}</core:set>
+		<core:set var="vPlanFinP">${row[2]}</core:set>
+		<core:set var="vPlanStrP">${row[3]}</core:set>
+		<core:set var="vPlanPTyp">${row[4]}</core:set>
+		<core:set var="vPlanObjC">${row[5]}</core:set>
+		<core:set var="vPlanInvC">${row[6]}</core:set>
+		<core:set var="vPlanBGrp">${row[7]}</core:set>
+		<core:set var="vPlanBPrf">${row[8]}</core:set>
+		<core:set var="vPlanPart">${row[9]}</core:set>
+		<gel:log level="debug" message="Found Plan: ${vPlanName}-${vPlanCode} for Investment ${vPlanInvC} starting ${vPlanStrP} ending ${vPlanFinP} period ${vPlanPTyp} with Group ${vPlanBGrp} and Profile ${vPlanBPrf}"/>
+
+		<gel:parse var="v_xml_root">
+			<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
+				<Header action="write" externalSource="NIKU"
+					objectType="customObjectInstance" version="13"/>
+				<customObjectInstances objectCode="benf_plan_var">
+				</customObjectInstances>
+			</NikuDataBus>
+		</gel:parse>
+
+		<sql:query escapeText="false" var="vVars">
+			select BV.name, BV.code, BV.id
+			from odf_ca_benf_variable BV 
+			  inner join ODF_MULTI_VALUED_LOOKUPS MVLBC 
+				on MVLBC.object = 'benf_calc' and MVLBC.attribute='variables' and MVLBC.VALUE = BV.ID
+			  inner join odf_Ca_benf_calc BC on BC.ID = MVLBC.PK_ID
+			  inner join ODF_MULTI_VALUED_LOOKUPS MVLBG
+				on MVLBG.object = 'benf_group' and MVLBG.attribute='benefits' and MVLBG.VALUE = BC.ID
+			  inner join odf_ca_benf_group BG on BG.ID = MVLBG.PK_ID
+			where BG.ID = ${vPlanBGrp}
+			and BV.var_type='ID'
+		</sql:query>
+		<core:forEach items="${vVars.rowsByIndex}" var="row">
+			<core:set var="vVarName">${row[0]}</core:set>
+			<core:set var="vVarCode">${row[1]}</core:set>
+			<core:set var="vVarIntl">${row[2]}</core:set>
+			<gel:log level="debug" message="-- Found Benefit Variable: ${vVarName}-${vVarCode} vVarIntl: ${vVarIntl}"/>
+
+			<gel:parse var="v_xml_instance">
+				<instance instanceCode="${vPlanCode}-${vVarCode}" objectCode="benf_plan_var" parentInstanceCode="${vPlanCode}" parentObjectCode="benefitplan">
+				  <CustomInformation>
+					<ColumnValue name="partition_code">${vPlanPart}</ColumnValue>
+					<ColumnValue name="name">${vPlanCode}-${vVarCode}</ColumnValue>
+					<ColumnValue name="code">${vPlanCode}-${vVarCode}</ColumnValue>
+					<ColumnValue name="benf_variable">${vVarCode}</ColumnValue>
+					<ColumnValue name="current_value">0</ColumnValue>
+				  </CustomInformation>
+				  <OBSAssocs complete="false"/>
+				</instance>
+			</gel:parse>
+			<gel:set insert="true" select="$v_xml_root/NikuDataBus/customObjectInstances" value="${v_xml_instance}"/>
+		</core:forEach>
+
+		<core:if test="${DebugLevel &gt; 1}">
+			<gel:serialize var="${v_xml_root}" fileName="${XOGwebFolder}/XOGWrite_LoadBenefitVars_${vBenefitPlanIntl}.xml"/>
+			<gel:log level="debug" message="XOG Write can be found at: ${XOGURL}/niku/XOGWrite_LoadBenefitVars_${vBenefitPlanIntl}.xml"/>
+		</core:if>
+
+		<!-- Calling XOG-->
+		<core:catch var="v_xog_exception">
+			<soap:invoke endpoint="${XOGURL}/niku/xog" var="runresult">
+				<soap:message>
+					<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xog="http://www.niku.com/xog">
+						<soapenv:Header>
+							<xog:Auth>
+								<xog:SessionID>${sessionID}</xog:SessionID>
+							</xog:Auth>
+						</soapenv:Header>
+						<soapenv:Body>
+							<gel:include select="$v_xml_root/NikuDataBus"/>
+						</soapenv:Body>
+					</soapenv:Envelope>
+				</soap:message>
+			</soap:invoke>
+		</core:catch>
+		<core:if test="${DebugLevel &gt; 1}">
+			<gel:serialize var="${runresult}" fileName="${XOGwebFolder}/XOGResult_LoadBenefitVars_${vBenefitPlanIntl}.xml"/>
+			<gel:log level="debug" message="XOG Results can be found at: ${XOGURL}/niku/XOGResult_LoadBenefitVars_${vBenefitPlanIntl}.xml"/>
+		</core:if>
+
+    </core:forEach>
+
+</gel:script>
