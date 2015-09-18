@@ -58,7 +58,7 @@
 		</gel:parse>
 
 		<sql:query escapeText="false" var="vVars">
-			select BV.name, BV.code, BV.id
+			select BV.name, BV.code, BV.id, BV.most_likely, BV.best_case, BV.worst_case
 			from odf_ca_benf_variable BV 
 			  inner join ODF_MULTI_VALUED_LOOKUPS MVLBC 
 				on MVLBC.object = 'benf_calc' and MVLBC.attribute='variables' and MVLBC.VALUE = BV.ID
@@ -73,8 +73,23 @@
 			<core:set var="vVarName">${row[0]}</core:set>
 			<core:set var="vVarCode">${row[1]}</core:set>
 			<core:set var="vVarIntl">${row[2]}</core:set>
+			<core:set var="vVarMost">${row[3]}</core:set>
+			<core:set var="vVarBest">${row[4]}</core:set>
+			<core:set var="vVarWrst">${row[5]}</core:set>
 			<gel:log level="debug" message="-- Found Benefit Variable: ${vVarName}-${vVarCode} vVarIntl: ${vVarIntl}"/>
 
+			<core:switch on="${vPlanBPrf}">
+				<core:case value="WC">
+					<core:set var="vVarSugg" value="${vVarWrst}"/>
+				</core:case>
+				<core:case value="BC">
+					<core:set var="vVarSugg" value="${vVarBest}"/>
+				</core:case>
+				<core:default>
+					<core:set var="vVarSugg" value="${vVarMost}"/>
+				</core:default>
+			</core:switch>
+			
 			<gel:parse var="v_xml_instance">
 				<instance instanceCode="${vPlanCode}-${vVarCode}" objectCode="benf_plan_var" parentInstanceCode="${vPlanCode}" parentObjectCode="benefitplan">
 				  <CustomInformation>
@@ -82,7 +97,7 @@
 					<ColumnValue name="name">${vPlanCode}-${vVarCode}</ColumnValue>
 					<ColumnValue name="code">${vPlanCode}-${vVarCode}</ColumnValue>
 					<ColumnValue name="benf_variable">${vVarCode}</ColumnValue>
-					<ColumnValue name="current_value">0</ColumnValue>
+					<ColumnValue name="current_value">${vVarSugg}</ColumnValue>
 				  </CustomInformation>
 				  <OBSAssocs complete="false"/>
 				</instance>

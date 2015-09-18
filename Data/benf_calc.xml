@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
+  <Header action="write" externalSource="NIKU" objectType="customObjectInstance" version="14.2.0.237"/>
+  <customObjectInstances objectCode="benf_calc">
+    <instance instanceCode="BEN00001" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Redução do Número de Reuniões de Projeto para Coordenação e Status</ColumnValue>
+        <ColumnValue name="code">BEN00001</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">PS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">By enabling real-time visualization into current completion rates, business alignment, and resource allocation of projects, the organization can reduce the number and length of status and coordination meetings.</ColumnValue>
+        <ColumnValue name="formula">V0001/100*(V0002+V0003)*((V0004*(1+(V0015/100)))/V0008)*V0005*V0006*V0007</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>V0001</Value>
+          <Value>V0002</Value>
+          <Value>V0003</Value>
+          <Value>V0004</Value>
+          <Value>V0005</Value>
+          <Value>V0006</Value>
+          <Value>V0007</Value>
+          <Value>V0008</Value>
+          <Value>V0015</Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="BEN00002" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Redução dos Tempos de Gestão de Projetos com a geração Automática dos Relatórios</ColumnValue>
+        <ColumnValue name="code">BEN00002</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">PS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="formula">V0009/100*V0010*(1+(V0015/100))*V0011</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>V0009</Value>
+          <Value>V0010</Value>
+          <Value>V0011</Value>
+          <Value>V0015</Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">M</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="BEN00003" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Redução nos Tempos de Projeto através de um Melhor Suporte a Decisões</ColumnValue>
+        <ColumnValue name="code">BEN00003</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="formula">V0012/100*V0013*V0014/100</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>V0012</Value>
+          <Value>V0013</Value>
+          <Value>V0014</Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">O</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance>
+  </customObjectInstances>
+  <XOGOutput>
+    <Object type="customObjectInstance"/>
+    <Status state="SUCCESS"/>
+    <Statistics failureRecords="0" insertedRecords="0" totalNumberOfRecords="3" updatedRecords="0"/>
+    <Records/>
+  </XOGOutput>
+</NikuDataBus>

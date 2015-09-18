@@ -50,7 +50,7 @@
 		<core:set var="vPlanStdt">${row[10]}</core:set>
 		<core:set var="vPlanFndt">${row[11]}</core:set>
 
-		<core:switch on="vPlanBPrf">
+		<core:switch on="${vPlanBPrf}">
 			<core:case value="WC">
 				<core:set var="vGroupProfile" value="WORST_CASE"/>
 			</core:case>
@@ -80,7 +80,7 @@
 
 		<core:set var="vFound" value="0"/>
 		<sql:query escapeText="false" var="vBCalc">
-			select BC.ID, BC.CODE, BC.NAME, BC.CLASS, BC.SUBCLASS, BC.CATEGORY, BC.BENF_RECURRENCE, BC.FORMULA
+			select BC.ID, BC.CODE, BC.NAME, BC.CLASS, BC.SUBCLASS, BC.CATEGORY, BC.BENF_RECURRENCY_PER, BC.FORMULA
 			from odf_ca_benf_calc BC 
 				 inner join odf_multi_valued_lookups mvlbg 				
 				on MVLBG.object = 'benf_group' and MVLBG.attribute='benefits' and MVLBG.VALUE = BC.ID
@@ -177,11 +177,57 @@
 					<gel:log level="debug" message="--Final Benefit Result: ${vFinalResult}"/>
 				</core:if>
 
+				<core:set var="vSplit" value="1"/>
+				<core:set var="vMultiply" value="1"/>
+				<core:if test="${vBenfRecr != 'O'}">
+					<core:switch on="${vPlanPTyp}">
+						<core:case value="13_PERIODS_PER_YEAR">
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="13"/>
+							</core:if>
+						</core:case>
+						<core:case value="WEEKLY">
+							<core:set var="vSplit" value="30"/>
+							<core:set var="vMultiply" value="7"/>
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="52"/>
+								<core:set var="vMultiply" value="1"/>
+							</core:if>
+						</core:case>
+						<core:case value="SEMI_MONTHLY">
+							<core:set var="vSplit" value="2"/>
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="24"/>
+							</core:if>
+						</core:case>
+						<core:case value="MONTHLY">
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="12"/>
+							</core:if>
+						</core:case>
+						<core:case value="QUARTERLY">
+							<core:set var="vMultiply" value="3"/>
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="4"/>
+								<core:set var="vMultiply" value="1"/>
+							</core:if>
+						</core:case>
+						<core:default>
+							<core:set var="vMultiply" value="12"/>
+							<core:if test="${vBenfRecr=='A'}">
+								<core:set var="vSplit" value="1"/>
+								<core:set var="vMultiply" value="1"/>
+							</core:if>
+						</core:default>
+					</core:switch>
+				</core:if>
+
 				<sql:query escapeText="false" var="vPeriods">
 					select to_char(START_DATE,'YYYY-MM-DD'), to_char(END_DATE-1,'YYYY-MM-DD')
 					FROM BIZ_COM_PERIODS
 					WHERE PERIOD_TYPE='${vPlanPTyp}'
-					AND to_char(START_DATE,'YYYY-MM-DD') between '${vPlanStdt}' and '${vPlanFndt}'			
+					AND to_char(START_DATE,'YYYY-MM-DD') between '${vPlanStdt}' and '${vPlanFndt}'
+					order by start_date					
 				</sql:query>
 				<core:forEach items="${vPeriods.rowsByIndex}" var="row">
 					<core:set var="vFound" value="2"/>
@@ -192,10 +238,10 @@
 					</core:if>
 					
 					<gel:parse var="v_xml_segment">
-						<segment finish="${vPerFinish}T00:00:00" start="${vPerStart}T00:00:00" value="${vFinalResult}"/>
+						<segment finish="${vPerFinish}T00:00:00" start="${vPerStart}T00:00:00" value="${vFinalResult*vMultiply/vSplit}"/>
 					</gel:parse>
 					<gel:set insert="true" select="$v_xml_instance/Detail/Benefit" value="${v_xml_segment}"/>
-					<core:if test="${vBenfRecr==0}">
+					<core:if test="${vBenfRecr=='O'}">
 						<core:set var="vFinalResult" value="0"/>
 					</core:if>
 				</core:forEach>

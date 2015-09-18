@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
+  <Header action="write" externalSource="NIKU" objectType="customObjectInstance" version="14.2.0.237"/>
+  <customObjectInstances objectCode="benf_variable">
+    <instance instanceCode="V0001" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">% Redução no Tempo gasto em Reuniões de Projeto</ColumnValue>
+        <ColumnValue name="code">V0001</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">50</ColumnValue>
+        <ColumnValue name="most_likely">25</ColumnValue>
+        <ColumnValue name="worst_case">15</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0002" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número Médio de Horas de duração de cada Reunião de Status</ColumnValue>
+        <ColumnValue name="code">V0002</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">4</ColumnValue>
+        <ColumnValue name="most_likely">2</ColumnValue>
+        <ColumnValue name="worst_case">1</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0003" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número Médio de Horas de Preparação de cada Reunião de Status de Projeto</ColumnValue>
+        <ColumnValue name="code">V0003</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">3</ColumnValue>
+        <ColumnValue name="most_likely">1.5</ColumnValue>
+        <ColumnValue name="worst_case">1</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0004" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Salário Médio Anual dos Membros de Equipe de Projetos</ColumnValue>
+        <ColumnValue name="code">V0004</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">200000</ColumnValue>
+        <ColumnValue name="most_likely">150000</ColumnValue>
+        <ColumnValue name="worst_case">100000</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0005" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número Médio de Participantes em Cada Reunião de Projeto</ColumnValue>
+        <ColumnValue name="code">V0005</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">12</ColumnValue>
+        <ColumnValue name="most_likely">8</ColumnValue>
+        <ColumnValue name="worst_case">6</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0006" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número Médio de Reuniões necessárias para Cada Projeto</ColumnValue>
+        <ColumnValue name="code">V0006</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">16</ColumnValue>
+        <ColumnValue name="most_likely">10</ColumnValue>
+        <ColumnValue name="worst_case">6</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0007" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número de Projetos novos por ano</ColumnValue>
+        <ColumnValue name="code">V0007</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">100</ColumnValue>
+        <ColumnValue name="most_likely">70</ColumnValue>
+        <ColumnValue name="worst_case">40</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0008" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Horas úteis de trabalho no Ano</ColumnValue>
+        <ColumnValue name="code">V0008</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">2000</ColumnValue>
+        <ColumnValue name="most_likely">2000</ColumnValue>
+        <ColumnValue name="worst_case">2000</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0009" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">% Redução no Tempo Administrativo de Gestão dos Projetos</ColumnValue>
+        <ColumnValue name="code">V0009</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">10</ColumnValue>
+        <ColumnValue name="most_likely">7.5</ColumnValue>
+        <ColumnValue name="worst_case">5</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0010" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Salário Médio Anual de um Gerente de Projetos</ColumnValue>
+        <ColumnValue name="code">V0010</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">450000</ColumnValue>
+        <ColumnValue name="most_likely">390000</ColumnValue>
+        <ColumnValue name="worst_case">320000</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0011" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Número Médio de Gerentes de Projeto para os Projetos Orçados</ColumnValue>
+        <ColumnValue name="code">V0011</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">16</ColumnValue>
+        <ColumnValue name="most_likely">12</ColumnValue>
+        <ColumnValue name="worst_case">8</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0012" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">% Redução no Tempo de Entrega dos Projetos</ColumnValue>
+        <ColumnValue name="code">V0012</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">10</ColumnValue>
+        <ColumnValue name="most_likely">7</ColumnValue>
+        <ColumnValue name="worst_case">5</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0013" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Total de Orçamento de Projetos em um Ano?</ColumnValue>
+        <ColumnValue name="code">V0013</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">10000000</ColumnValue>
+        <ColumnValue name="most_likely">10000000</ColumnValue>
+        <ColumnValue name="worst_case">10000000</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0014" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">% do Orçamento de Projetos Gerenciado pelo PPM</ColumnValue>
+        <ColumnValue name="code">V0014</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">100</ColumnValue>
+        <ColumnValue name="most_likely">75</ColumnValue>
+        <ColumnValue name="worst_case">50</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0015" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Encargos Trabalhistas (Aproximados)</ColumnValue>
+        <ColumnValue name="code">V0015</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">100</ColumnValue>
+        <ColumnValue name="most_likely">100</ColumnValue>
+        <ColumnValue name="worst_case">100</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+    <instance instanceCode="V0016" objectCode="benf_variable">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">% do Orçamento Total de Projetos consumido por Projetos de Baixo Valor</ColumnValue>
+        <ColumnValue name="code">V0016</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_variableFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="best_case">15</ColumnValue>
+        <ColumnValue name="most_likely">10</ColumnValue>
+        <ColumnValue name="worst_case">5</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_variable_edit" userName="admin"/>
+      </Security>
+    </instance>
+  </customObjectInstances>
+  <XOGOutput>
+    <Object type="customObjectInstance"/>
+    <Status state="SUCCESS"/>
+    <Statistics failureRecords="0" insertedRecords="0" totalNumberOfRecords="16" updatedRecords="0"/>
+    <Records/>
+  </XOGOutput>
+</NikuDataBus>
