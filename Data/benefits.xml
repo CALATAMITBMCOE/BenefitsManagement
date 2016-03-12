@@ -1,0 +1,391 @@
+<NikuDataBus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/nikuxog_customObjectInstance.xsd">
+  <Header action="write" externalSource="NIKU" objectType="customObjectInstance" version="14.2.0.237"/>
+  <customObjectInstances objectCode="benf_calc">
+    <instance instanceCode="BEN00100" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Time Savings from Reduced or Shorter Meetings</ColumnValue>
+        <ColumnValue name="code">BEN00100</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">PS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: CA PPM helps relieve administrative burden on an organization's most valuable asset - its people.  To speed time-to-execution, organizations must achieve an equitable balance between resource capacity and demand. By enabling real-time visualization into current completion rates, business alignment, and resource allocation of projects, an organization may reduce the number and length of status and coordination meeting hours.</ColumnValue>
+        <ColumnValue name="formula">EN025 * (EN004+EN005) * (EN017/EN019) * EN001 * EN002 * EN003</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN025</Value>
+          <Value>EN017</Value>
+          <Value>EN001</Value>
+          <Value>EN002</Value>
+          <Value>EN003</Value>
+          <Value>EN004</Value>
+          <Value>EN005</Value>
+          <Value>EN019</Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00101" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Improved Project Manager Productivity</ColumnValue>
+        <ColumnValue name="code">BEN00101</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">PS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: CA PPM helps improve the productivity of an oranization's Project Managers by providing dashboards, pre-configured views, editable GANTT charts and personalized navigation to enable faster decision making and decrease the time otherwise required by Project Managers to complete project basic tasks.  And, dashboard reporting and management insights may also be delivered to mobile devices!</ColumnValue>
+        <ColumnValue name="formula">EN026 * EN018 * EN016</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN026</Value>
+          <Value>EN018</Value>
+          <Value>EN016</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00102" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Improved Resource Utilization</ColumnValue>
+        <ColumnValue name="code">BEN00102</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: CA PPM provides enterprise-wide project and resource management allowing you to accelerate delivery of innovative initiatives, projects and services. It may help you to quickly redistribute resources as needed to both meet changing business demand, and to help transition low-value investments to those that help drive greater business value.  When you understand current resource utilization and available skills at an organizational level, you can quickly identify resource surpluses or shortages and formulate redistribution plans or respond dynamically to reallocate funds or staff when necessary to accelerate delivery of strategic innovations or projects to the business.</ColumnValue>
+        <ColumnValue name="formula">EN027 * EN007 * EN006</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN027</Value>
+          <Value>EN007</Value>
+          <Value>EN006</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00103" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Project Cycle Times through Improved Decision Support</ColumnValue>
+        <ColumnValue name="code">BEN00103</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: Project cycle time is the average time it takes to complete a project. CA PPM lets you track and analyze labor costs and determine the estimated time to completion for all projects (Traditional and Agile). Reporting capabilities can provide dynamic information on the time spent by resources on work performed.  With improved insight, organizations may achieve tighter control that results in shortened project durations and helps transformation efforts to provide resources with more time to focus on delivering strategic innovations to the business. When project deliverables are revenue-generating, shortened project duration means quicker access to the related revenue.</ColumnValue>
+        <ColumnValue name="formula">EN028 * EN006</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN028</Value>
+          <Value>EN006</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00104" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Project Cost Overruns</ColumnValue>
+        <ColumnValue name="code">BEN00104</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: CA PPM provides insight for improved planning, tracking, and analysis of the financial performance of key projects. While overruns cause many projects to fail, even projects that provide a positive return often go over budget due to poor scheduling, budget estimations, and project transparency.  Project managers can monitor status and cost of projects in real time and take action to help reduce the occurrences and costs of overruns.</ColumnValue>
+        <ColumnValue name="formula">EN029 * EN008 * EN006</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass02</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN029</Value>
+          <Value>EN008</Value>
+          <Value>EN006</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00105" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Costs through Application Rationalization</ColumnValue>
+        <ColumnValue name="code">BEN00105</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: With CA PPM, an organization may organize an inventory of applications used within its environment.  Analysis of an application portfolio provides opportunity to remove redundant applications from the environment, rationalize costs, and potentially also lower additional related OPEX.  With v14.3, time-tested content is included to help you simplify your evaluation to rationalize your portfolio.</ColumnValue>
+        <ColumnValue name="formula">EN030 * EN012</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN030</Value>
+          <Value>EN012</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00106" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Improved Portfolio Management due to Reduction in Low-Value Projects</ColumnValue>
+        <ColumnValue name="code">BEN00106</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: Low-value projects that are not aligned with strategy or that have redundant goals with other projects dilute the value of the overall project portfolio. CA PPM offers out-of-the box metrics, including benefit and cost capture, resource capacity, demand, alignment to goal rating, milestone schedules and risk profiling. This enables businesses to model a service and project portfolio against business strategy and goal criteria to better determine where to invest for greater value to the business.</ColumnValue>
+        <ColumnValue name="formula">EN031 * EN010 * EN006</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN031</Value>
+          <Value>EN010</Value>
+          <Value>EN006</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00107" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Project Failures</ColumnValue>
+        <ColumnValue name="code">BEN00107</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">OS</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: Project failure rate is the metric used to describe the percentage of projects that fail to provide value due to factors such as budget/schedule overruns, poor alignment, mismanaged requirements, or technical failures. CA PPM provides a rich set of functionality for project planning including resource allocation, risk and time management and budgeting to ensure that corporate governance and best practices are adhered to so that the right projects are delivered on time and on budget.</ColumnValue>
+        <ColumnValue name="formula">EN032 * EN009 * EN006 * EN011</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN032</Value>
+          <Value>EN009</Value>
+          <Value>EN006</Value>
+          <Value>EN011</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00108" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Improved Revenue Through Faster Product Release Cycles</ColumnValue>
+        <ColumnValue name="code">BEN00108</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">RP</ColumnValue>
+        <ColumnValue name="class">class01</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: Improved product release cycle time can have a significant impact on revenues.  Project management practices improved through use of CA PPM may enable faster release cycles that speed time to value and result in enhanced revenue for the business.  Further, agile development methodologies may add even more value to a release process, and CA Agile Central's planning capability enables iterative planning and development cycles, allowing project teams to continually evaluate an evolving product and obtain immediate feedback from stakeholders and adjust product and work accordingly.</ColumnValue>
+        <ColumnValue name="formula">(EN033 + EN015) * EN013 * EN002 * EN014</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass04</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN033</Value>
+          <Value>EN013</Value>
+          <Value>EN002</Value>
+          <Value>EN014</Value>
+          <Value>EN015</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00109" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced SW Maintenance for Replaced Solutions</ColumnValue>
+        <ColumnValue name="code">BEN00109</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">TCO</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: Consolidating or replacing existing tools with a CA solution enables an IT organization to realize cost savings by avoiding the cost of of maintenance renewals on the replaced software.</ColumnValue>
+        <ColumnValue name="formula">EN034 * EN020</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN034</Value>
+          <Value>EN020</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00110" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Infrastructure Costs of CA PPM SaaS</ColumnValue>
+        <ColumnValue name="code">BEN00110</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">TCO</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: With an on-demand or 3rd party hosted solution, the cost that would otherwise be required to acquire and maintain infrastructure for an on-premise solution is eliminated. The CA SaaS solution offers the means to deliver solution functionality without the infrastructure costs associated with an on-premise solution.</ColumnValue>
+        <ColumnValue name="formula">F1 * (F2 + F3)</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN035</Value>
+          <Value>EN021</Value>
+          <Value>EN022</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+    <instance instanceCode="BEN00111" objectCode="benf_calc">
+      <CustomInformation>
+        <ColumnValue name="partition_code">NIKU.ROOT</ColumnValue>
+        <ColumnValue name="name">Reduced Maintenance/Administration Costs for SaaS Solution vs Other Solution</ColumnValue>
+        <ColumnValue name="code">BEN00111</ColumnValue>
+        <ColumnValue name="page_layout">odf.benf_calcFrame</ColumnValue>
+        <ColumnValue name="odf_period_start"/>
+        <ColumnValue name="odf_period_end"/>
+        <ColumnValue name="active">true</ColumnValue>
+        <ColumnValue name="category">TCO</ColumnValue>
+        <ColumnValue name="class">class02</ColumnValue>
+        <ColumnValue name="descr">Feature Value Creation: On Premise solutions may require additional investment for ongoing maintenance, administration, and to keep the solution on the latest application release, while an on-demand or 3rd party hosted subscriptions may include the cost of maintainance and upgrades. When solution pricing includes application maintenance and administration, these additional investment costs are avoided.</ColumnValue>
+        <ColumnValue name="formula">EN036 * EN024 * EN023</ColumnValue>
+        <ColumnValue name="status">New</ColumnValue>
+        <ColumnValue name="subclass">subclass01</ColumnValue>
+        <ColumnValue name="variables">
+          <Value>EN036</Value>
+          <Value>EN024</Value>
+          <Value>EN023</Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+          <Value></Value>
+        </ColumnValue>
+        <ColumnValue name="benf_recurrency_per">A</ColumnValue>
+      </CustomInformation>
+      <OBSAssocs complete="false"/>
+      <Security>
+        <UserSecurity rightCode="odf_cst_benf_calc_edit" userName="admin"/>
+      </Security>
+    </instance> 
+
+
+  </customObjectInstances>
+</NikuDataBus>
